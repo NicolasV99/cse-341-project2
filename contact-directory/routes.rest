@@ -18,16 +18,16 @@ Content-Type: application/json
 }
 
 ### Put contact
-PUT http://localhost:3000/contacts/67951e1a7b2a5a040a1700ab HTTP/1.1
+PUT http://localhost:3000/contacts/67952cdd8e0481ab132dd92d HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Oscar Reyes",
-    "phone": "424-855-6526",
-    "email": "oscar.reyes@hotmail.com",
-    "address": "789 Chestnut Pl, North Shelbyville, USA"
+    "name": "Maria Reyes",
+    "phone": "424-258-6526",
+    "email": "maria.reyes@hotmail.com",
+    "address": "789 Ave, Utah, USA"
 }
 
 
 ### DELETE Contact
-DELETE http://localhost:3000/contacts/67951e1a7b2a5a040a1700ab HTTP/1.1
+DELETE http://localhost:3000/contacts/67952cdd8e0481ab132dd92d HTTP/1.1

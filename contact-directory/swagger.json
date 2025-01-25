@@ -19,7 +19,10 @@
         "description": "",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Test, OK"
+          },
+          "500": {
+            "description": "Something is not working correctly"
           }
         }
       }
@@ -35,7 +38,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Contact Directory"
           }
         }
       },
@@ -96,7 +99,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Contact found successfully"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
