@@ -72,10 +72,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Contact added successfully"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Contact could not be added"
           }
         }
       }
@@ -102,7 +102,7 @@
             "description": "Contact found successfully"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Contact could not be found"
           }
         }
       },
@@ -142,10 +142,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "The information was updated"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Failed to update contact"
           }
         }
       },
@@ -164,10 +164,10 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content"
+            "description": "Contact was deleted successfully"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Something happened, the contact could not be deleted"
           }
         }
       }
