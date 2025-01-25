@@ -4,11 +4,16 @@ const ObjetcId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
     //#swagger.tags=['Contacts']
-    const result = await mongodb.getDatabase().db().collection('contacts').find();
-    result.toArray().then((contacts) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(contacts);        
-    });
+    try {
+        const result = await mongodb.getDatabase().db().collection('contacts').find();
+        result.toArray().then((contacts) => {
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(contacts);        
+        });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ message: 'Some error occurred while retrieving the contacts' });
+    }
 };
 
 const getSingle = async (req, res) => {
@@ -23,20 +28,11 @@ const getSingle = async (req, res) => {
     } catch (error) {
         console.error(error.message); 
         res.status(500).json({ message: 'Some error occurred while retrieving the contact' }); 
-    }
-    
+    }  
 };
 
 const createContact = async (req, res) => {
     //#swagger.tags=['Contacts']
-    //#swagger.summary='Create a new contact'
-    //#swagger.responses[204] = {
-    //    description: 'Contact created successfully'
-    // }
-    //#swagger.responses[500] = {
-    //    description: 'Error occurred while creating the contact',
-    //    schema: { message: 'Some error occurred while creating the contact' }
-    // }
     try {
         const contact = {
             name: req.body.name,
@@ -54,7 +50,6 @@ const createContact = async (req, res) => {
         console.error(error.message);
         res.status(500).json({ message: 'Some error occurred while creating the contact' });
     }
-    
 };
 
 const updateContact = async (req, res) => {
@@ -77,7 +72,6 @@ const updateContact = async (req, res) => {
         console.error(error.message);
         res.status(500).json({ message: 'Some error occurred while updating the contact' });
     }
-    
 };
 
 const deleteContact = async(req, res) => {
@@ -94,7 +88,6 @@ const deleteContact = async(req, res) => {
         console.error(error.message);
         res.status(500).json({ message: 'Some error occurred while deleting the contact' });
     }
-    
 };
 
 
