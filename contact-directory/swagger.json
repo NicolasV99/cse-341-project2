@@ -196,7 +196,7 @@
             "description": "OK"
           },
           "500": {
-            "description": "Some error occurred while retrieving the contacts"
+            "description": "Some error occurred while retrieving the clients"
           }
         }
       },
