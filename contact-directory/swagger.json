@@ -5,7 +5,7 @@
     "description": "Contacts Api",
     "version": "1.0.0"
   },
-  "host": "cse-341-project2-56p1.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "https"
@@ -19,10 +19,17 @@
         "description": "",
         "responses": {
           "200": {
-            "description": "Test, OK"
-          },
-          "500": {
-            "description": "Something is not working correctly"
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
@@ -38,7 +45,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Contact Directory"
+            "description": "Ok"
+          },
+          "500": {
+            "description": "Some error occurred while retrieving the contacts"
           }
         }
       },
@@ -72,10 +82,10 @@
         ],
         "responses": {
           "204": {
-            "description": "Contact added successfully"
+            "description": "Contact Created Successfully"
           },
           "500": {
-            "description": "Contact could not be added"
+            "description": "An error occurred while creating the contact"
           }
         }
       }
@@ -102,7 +112,7 @@
             "description": "Contact found successfully"
           },
           "500": {
-            "description": "Contact could not be found"
+            "description": "Contact not found"
           }
         }
       },
@@ -142,10 +152,10 @@
         ],
         "responses": {
           "204": {
-            "description": "The information was updated"
+            "description": "Contact updated successfully"
           },
           "500": {
-            "description": "Failed to update contact"
+            "description": "Contact was not updated"
           }
         }
       },
@@ -164,10 +174,170 @@
         ],
         "responses": {
           "204": {
-            "description": "Contact was deleted successfully"
+            "description": "Contact deleted successfully"
           },
           "500": {
-            "description": "Something happened, the contact could not be deleted"
+            "description": "Contact was not deleted"
+          }
+        }
+      }
+    },
+    "/clients/": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Some error occurred while retrieving the contacts"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clients"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "lastContactDate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Client created successfully"
+          },
+          "500": {
+            "description": "An error occurred while creating the client"
+          }
+        }
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client found successfully"
+          },
+          "500": {
+            "description": "Client not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clients"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "lastContactDate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Client updated successfully"
+          },
+          "500": {
+            "description": "Client was not updated"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clients"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Client deleted successfully"
+          },
+          "500": {
+            "description": "Client was not deleted"
           }
         }
       }

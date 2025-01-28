@@ -2,6 +2,8 @@ const { application } = require('express');
 const mongodb = require('../data/database');
 const ObjetcId = require('mongodb').ObjectId;
 
+
+// Functions for Contacts
 const getAll = async (req, res) => {
     //#swagger.tags=['Contacts']
     try {
